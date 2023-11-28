@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for n in range(ord('a'), ord('z') + 1):
-    print("{:n}".format(n), end="")
+for c in range(ord('a'), ord('z') + 1):
+    print("{:c}".format(c), end="")
