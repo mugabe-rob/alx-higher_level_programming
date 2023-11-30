@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import real_print
+exec("print('#pythoniscool')")
