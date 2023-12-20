@@ -85,4 +85,4 @@ class Square:
            type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__position = val
+            self.__position = value
