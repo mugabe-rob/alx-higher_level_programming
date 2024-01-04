@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 nqueens backtracking program to print the coordinates of n queens
+on an nxn grid such that they are all in non-attacking positions
 """
 
 
@@ -20,8 +21,8 @@ if __name__ == "__main__":
         exit(1)
 
     # initialize the answer list
-    for counter in range(n):
-        a.append([counter, None])
+    for i in range(n):
+        a.append([i, None])
 
     def already_exists(y):
         """check that a queen does not already exist in that y value"""
@@ -34,11 +35,11 @@ if __name__ == "__main__":
         """determines whether or not to reject the solution"""
         if (already_exists(y)):
             return False
-        counter = 0
-        while(counter < x):
-            if abs(a[counter][1] - y) == abs(counter - x):
+        i = 0
+        while(i < x):
+            if abs(a[i][1] - y) == abs(i - x):
                 return False
-            counter += 1
+            i += 1
         return True
 
     def clear_a(x):
