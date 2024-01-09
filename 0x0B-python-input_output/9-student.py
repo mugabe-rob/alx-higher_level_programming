@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""
-Containing a class Student
-"""
+"""A class Student that defines a student by:"""
+
 
 class Student:
-    """Instantiation of the student"""
+    """class Student that defines a student by:"""
     def __init__(self, first_name, last_name, age):
-        """initializing the public instance"""
+        """Public instance attributes:"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """returning a dictionary of students representation"""
+        """that retrieves a dictionary representation"""
         return self.__dict__
