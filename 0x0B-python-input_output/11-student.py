@@ -1,33 +1,27 @@
 #!/usr/bin/python3
-"""
-containing the Student class
-"""
+"""class Student that defines a student by:"""
+
 
 class Student:
-    """representing student"""
+    """class Student that defines a student by:"""
     def __init__(self, first_name, last_name, age):
-        """Instantiation of public instance"""
+        """Public instance attributes:"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
-
     def to_json(self, attrs=None):
-        """returns a dictionary representation of a student instance with attributes"""
+        """that retrieves a dictionary representation"""
         if attrs is None:
             return self.__dict__
-        new_dict = {}
-        for x in attrs:
-            try:
-                new_dict[x] = self.__dict__[x]
-            except FileNotFoundError:
-                pass
-            return new_dict
+        else:
+            my_dict = {}
+            for i in attrs:
+                if hasattr(self, i):
+                    my_dict[i] = getattr(self, i)
+            return my_dict
 
     def reload_from_json(self, json):
-        """replaces all attributes of the Student instance"""
-        for counter in json:
-            try:
-                setattr(self, counter, json[counter])
-            except FileNotFoundError:
-                pass
+        """that replaces all attributes of the Student instance:"""
+        for key, value in json.items():
+            setattr(self, key, value)
