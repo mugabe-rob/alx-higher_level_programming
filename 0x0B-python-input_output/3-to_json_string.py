@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-"""
-containing the to_json_string(my_obj)
-"""
-
+"""Module that returns the JSON representation of an object (string)"""
 import json
 
+
 def to_json_string(my_obj):
-    """writing to a json file"""
+    """returning the JSON representation of an object (string)"""
     return json.dumps(my_obj)
