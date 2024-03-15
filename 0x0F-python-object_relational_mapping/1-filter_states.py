@@ -20,6 +20,6 @@ if __name__ == '__main__':
 
     cursor.execute('SELECT id, name FROM states ORDER BY states.id ASC')
     
-    for x in cursor.fetchall():
-        if x[1][0] == 'N':
-            print(x)
+    for row in cursor.fetchall():
+        if row[1][0] == 'N':
+            print(row)
